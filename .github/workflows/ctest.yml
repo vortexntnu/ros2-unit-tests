@@ -11,11 +11,20 @@ jobs:
         with:
           required-ros-distributions: humble
 
-      - name: ROS CI
+      - name: ROS CI for my_package
         uses: ros-tooling/action-ros-ci@v0.3
         with:
           package-name: my_package
           target-ros2-distro: humble
-
-      - name: Run tests
-        run: colcon test --ctest-args tests
+  
+      - name: ROS CI for cpp_pubsub
+        uses: ros-tooling/action-ros-ci@v0.3
+        with:
+          package-name: cpp_pubsub
+          target-ros2-distro: humble
+  
+      - name: Run tests for my_package
+        run: colcon test --ctest-args tests --packages-select my_package
+  
+      - name: Run tests for cpp_pubsub
+        run: colcon test --ctest-args tests --packages-select cpp_pubsub
