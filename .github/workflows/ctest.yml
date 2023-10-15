@@ -23,8 +23,8 @@ jobs:
           package-name: cpp_pubsub
           target-ros2-distro: humble
   
-      - name: Run tests for my_package
-        run: colcon test --ctest-args tests --packages-select my_package
-  
-      - name: Run tests for cpp_pubsub
-        run: colcon test --ctest-args tests --packages-select cpp_pubsub
+      - name: Run tests
+        run: |
+          source ~/install/setup.bash 
+          colcon test --ctest-args tests
+        working-directory: ${{ github.workspace }}
