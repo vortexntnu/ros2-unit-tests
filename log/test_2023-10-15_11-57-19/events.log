@@ -1,0 +1,5 @@
+[0.000000] (-) TimerEvent: {}
+[0.000302] (my_package) JobQueued: {'identifier': 'my_package', 'dependencies': OrderedDict([('my_package', '/home/sondre/ros2_ws/src/install/my_package')])}
+[0.000344] (my_package) JobStarted: {'identifier': 'my_package'}
+[0.052025] (my_package) JobEnded: {'identifier': 'my_package', 'rc': 1}
+[0.063203] (-) EventReactorShutdown: {}
