@@ -11,20 +11,7 @@ jobs:
         with:
           required-ros-distributions: humble
 
-      - name: ROS CI for my_package
+      - name: Build and test packages
         uses: ros-tooling/action-ros-ci@v0.3
         with:
-          package-name: my_package
           target-ros2-distro: humble
-  
-      - name: ROS CI for cpp_pubsub
-        uses: ros-tooling/action-ros-ci@v0.3
-        with:
-          package-name: cpp_pubsub
-          target-ros2-distro: humble
-  
-      - name: Run tests
-        run: |
-          source ./install/setup.bash 
-          colcon test --ctest-args tests
-        working-directory: ${{ github.workspace }}
