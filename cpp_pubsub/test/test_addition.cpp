@@ -3,7 +3,8 @@
 TEST(cpp_pubsub, a_first_test)
 {
   ASSERT_EQ(4, 2 + 2);
-  ASSERT_EQ(5, 2 + 2);
+  ASSERT_EQ(5, 3 + 2);
+  ASSERT_EQ(-6, 2 - 8);
 }
 
 int main(int argc, char ** argv)
