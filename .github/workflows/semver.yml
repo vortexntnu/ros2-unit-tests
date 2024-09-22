@@ -15,11 +15,6 @@ jobs:
         with:
           required-ros-distributions: humble
 
-      - name: Install dependencies
-        run: |
-          sudo apt update
-          sudo apt install -r requirements.txt
-
       - name: Build ROS2 workspace
         run: colcon build
 
