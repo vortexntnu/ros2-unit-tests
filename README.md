@@ -6,4 +6,4 @@ Using [ros-tooling/action-ros-ci](https://github.com/ros-tooling/action-ros-ci) 
 
 The action first assembles a workspace, then runs `colcon build`, and `colcon test` in it.
 
-Also used for testing semantic versioning
+Also used for testing semantic versioning. This is done via a manual workflow which automatically updates the release version based on commit names.
