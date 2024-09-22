@@ -62,3 +62,7 @@ qtcreator-*
 COLCON_IGNORE
 
 # End of https://www.gitignore.io/api/ros
+build/my_package/colcon_command_prefix_setup_py.sh
+build/my_package/colcon_test.rc
+log/latest
+log/latest_test
