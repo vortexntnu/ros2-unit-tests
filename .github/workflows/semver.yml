@@ -5,21 +5,24 @@ on:
     types:
       - completed
 
-
 jobs:
   publish:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Fix vulnerabilities
+        run: |
+          npm install -g npm
+          npm audit fix
+
       - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v4.0.0
+        uses: cycjimmy/semantic-release-action@v4.1.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           extra_plugins: |
-            @semantic-release/git
-            @semantic-release/github
-            @semantic-release/exec
-            @semantic-release/changelog
+            @semantic-release/github@v11.0.0
+            @semantic-release/exec@v6.0.0
