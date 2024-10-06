@@ -13,11 +13,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Fix vulnerabilities
-        run: |
-          npm install -g npm
-          npm audit fix
-
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v4.1.1
         env:
